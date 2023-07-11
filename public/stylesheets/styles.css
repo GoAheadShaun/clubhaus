@@ -1,0 +1,751 @@
+/* ---- GENERAL ELEMENT STYLES ---- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+    background-size: cover;
+    background-repeat: no-repeat;
+	background-position: center center;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center center;
+	border-radius: 4px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #F5F5F5;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+input::placeholder {
+    color: #B9B9B9;
+}
+
+/* buttons will generally be either green or red */
+
+button {
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    max-height: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+	color: #fff;
+	width: 100%;
+}
+
+button.red {
+	background-color: #D8405C;
+}
+
+.red button:hover {
+    background-color: #972036;
+}
+
+button.green{
+    background-color: #71A39E;
+}
+
+.green button:hover {
+    background-color: #4c7e79;
+}
+
+/* headings and fonts */
+
+h1 {
+    font-size: 40px;
+	font-weight: bold;
+    margin: 0px 0px 40px 0px;
+    color: darkblue;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 40px 0px 20px 0px;
+    color: #959595;
+}
+
+h3 {
+    font-size: 24px;
+    margin: 20px 0px 20px 0px;
+    color: #D8405C;
+}
+
+h4 {
+    font-size: 15px;
+}
+
+p {
+    margin-top: 16px;
+    margin-bottom: 16px;
+	font-size: 13px;
+}
+
+/* themes consistent throughout */
+
+.grey-container {
+	background-color:  #f1f1f1;
+	border-radius: 5px;
+	padding: 20px;
+	margin: 20px;
+	width: 100%;
+}
+
+.white-container {
+	background-color: white;
+	border-radius: 5px;
+	padding: 20px;
+	margin: 20px;
+	width: 100%;
+}
+
+/* ---- HEADER FOR ALL PAGES: VARIATIONS INCLUDED ---- */
+
+/* header includes the top-bar and the h1 'Enhancing your life' with a cover-photo (for the pages that have a cover photo) for the background*/
+
+header {
+    display: flex;
+    flex-direction: column;
+    height: 60px;
+}
+
+header.cover-photo {
+	gap: 110px;
+	min-height: 450px;
+	/* parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+}
+
+/* different image backgrounds */
+
+.home-page-header{
+	background-image:url("../images/home_page_header.jpeg");
+}
+
+.auss-header {
+	background-image:url("../images/AUSS_header.jpeg");
+}
+
+.csc-header {
+	background-image:url("../images/csc_header.jpeg");
+}
+
+.slogan {
+    color: #fff;
+    font-size: 3rem;
+    text-align: center;
+}
+
+/*the top-bar*/
+
+.top-bar-transparent {
+	height: 60px;
+	background-color: rgba(255, 255, 255, 0.8);
+	padding: 10px 2% 10px 7%;
+	display: flex;
+	align-items: center;
+}
+
+/*inside the top-bar are the (1) logo-image, (2) search-bar, (3) sign*/
+
+.logo {
+    height: 20px;
+    position: relative;
+}
+
+.search {
+    display: none;
+}
+
+/* sign is the div that contains the login and sign up buttons */
+.sign {
+    display: flex;
+    gap: 10px;
+    position: relative;
+    max-height: 40px;
+    justify-content: space-between;
+    align-items: center;
+    right: 0;
+    top: 0;
+    float: right;
+}
+
+.drop-down {
+	position: absolute;
+	top: 0;
+	transform: translate(-100px, 0px);
+	width: 100%;
+	display: flex;
+}
+
+/* ---- DIV CONTENT LAYOUT: UNIVERSAL MARGINS and DIV CONSISTANCY */
+
+.main-content {
+    min-height: calc(100vh - 245px);
+    /* 100% of the viewport height minus the height of the header and footer */
+    max-width: 85%;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+
+.vertical-div {
+	flex-direction: column;
+	gap: 5px;
+}
+
+.inline-content {
+	justify-content: space-between;
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+}
+
+.center-content {
+	width: 100%;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.logout {
+	height: 80px;
+}
+
+/* -- GRIDS -- */
+
+.grid-content {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(290px, 1fr));
+    justify-items: left;
+    grid-gap: 10px;
+}
+
+.club-box {
+    height: 350px;
+    flex-direction: column;
+	margin: 10px 0px;
+	justify-content: space-between;
+	display: flex;
+}
+
+.club-logo {
+    width: 70px;
+    height: 70px;
+}
+
+.club-box h2 {
+	color: #737373;
+	font-size: 18px;
+	margin-top: 20px;
+}
+
+.club-box p {
+    font-size: 12px;
+    color: #777;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+p.club-category {
+    font-size: 16px;
+    font-weight: bold;
+    color: #71A39E;
+}
+
+/* -- FOOTER -- */
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 175px;
+    background-color: #D8405C;
+    font-size: 12px;
+    line-height: 0.5;
+    color: white;
+    padding: 10px 200px;
+}
+
+/* -- POP-UPS -- */
+
+
+.popup-container{
+	display: none;
+	position: fixed;
+	height: 60%;
+	width: 75%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 4px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+	overflow-y: auto;
+}
+
+.pop-up-content {
+	padding: 0px 40px;
+}
+
+.popup-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+}
+
+.popup-container ul {
+    max-height: 200px;
+    overflow-y: auto;
+    list-style-type: none;
+    padding: 0;
+}
+
+.popup-container li {
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* -- CLUB PAGES -- */
+
+.club-photo {
+    height: 400px;
+	margin: 40px 0px;
+}
+
+/* email preference checkbox */
+
+.slider {
+position: absolute;
+top: 2px; /* Adjust the top position to center the slider vertically */
+left: 2px; /* Adjust the left position to center the slider horizontally */
+width: 76px; /* Reduce the width to account for padding */
+height: 36px; /* Reduce the height to account for padding */
+background-color: #fff;
+border-radius: 20px;
+transition: all 0.3s ease;
+}
+
+.slider:before {
+content: "";
+position: absolute;
+top: 4px; /* Increase the top position to adjust the grey box position */
+left: 4px; /* Increase the left position to adjust the grey box position */
+width: 28px; /* Increase the width to make the grey box wider */
+height: 28px; /* Increase the height to make the grey box taller */
+background-color: #888;
+border-radius: 50%;
+transition: all 0.3s ease;
+}
+
+input[type="checkbox"]:checked + .slider {
+background-color: #4cd964;
+}
+
+input[type="checkbox"]:checked + .slider:before {
+transform: translateX(36px); /* Adjust the translation distance to make the slider move further */
+}
+
+.slider.round {
+border-radius: 20px;
+}
+
+.slider.round:before {
+border-radius: 50%;
+}
+
+.switch {
+	position: relative;
+}
+
+.switch-label {
+    display: inline-block;
+    position: relative;
+    width: 80px; /* Increase the width to make the switch wider */
+    height: 20px; /* Increase the height to make the switch taller */
+    background-color: #ccc;
+    border-radius: 20px;
+    cursor: pointer;
+    box-sizing: border-box; /* Include padding in the width */
+    padding: 20px;
+}
+
+.switch-label input[type="checkbox"] {
+    display: none;
+}
+
+
+/* event list on right hand side */
+
+.event-list {
+    height: auto;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+	margin:0px;
+	padding: 30px;
+}
+
+.event-list li {
+    list-style: none;
+    padding: 12px 0px;
+}
+
+.event-list li p {
+	color: #777;
+	margin: 0;
+}
+
+.event-list button {
+    display: block;
+    margin: 0 auto;
+}
+
+/* -- REGISTRATION PAGES -- */
+
+.login_rego_button {
+    margin: 20px 20px 20px 0px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.club-event-upcoming-past-buttons button {
+    width: 150px;
+    height: 50px;
+}
+
+form {
+    width: 100%;
+}
+
+.rego-content {
+    min-height: calc(100vh - 245px);
+    /* 100% of the viewport height minus the height of the header and footer */
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* -- FORMS -- */
+
+.textbox-description {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    resize: vertical;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.shorttextbox-description {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    resize: vertical;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.rego-content button {
+    width: 100%;
+    margin-left: 0px;
+}
+
+label {
+    font-size: 15px;
+    font-weight: 0.1;
+    color: #737373;
+}
+
+.left-column {
+    float: left;
+    width: 65%;
+    margin-right: 25px;
+}
+
+.right-column {
+    width: 27%;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* -- EVENT PAGES -- */
+
+.event {
+    display: flex;
+    align-items: center;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 24px;
+}
+
+.event-name {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.event-info {
+    flex: 2;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.event-image {
+    flex: 1;
+    border-radius: 10px;
+}
+
+.event-image img {
+    width: 250px;
+    height: 125px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+
+.mainImage {
+    display: inline-block;
+    position: relative;
+    height: 500px;
+    width: 100%;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+}
+
+.event-name {
+    margin-top: 0%;
+    margin-left: 0%;
+}
+
+.location-time {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon {
+    width: 120px;
+    height: 120px;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.text-container {
+    margin-left: 10px;
+}
+
+.text-container p {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-style: bold;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* -- FORM AND REGISTATION -- */
+
+.Register-box {
+    background-color: lightgray;
+    height: 120px;
+    width: 340px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.Register-box div {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.Register-box div button {
+    width: 300px;
+}
+
+.right-column .join-button {
+    margin-top: 100px;
+}
+
+.results h1 {
+    font-size: 150%;
+}
+
+.results span {
+    color: #777;
+}
+
+
+/* -- MY EVENTS PAGE -- */
+.events-body {
+    min-height: calc(100vh - 245px);
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+
+.myevents-logo img {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 50px;
+}
+
+.search {
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.passwd_reqs {
+    font-size: 12px;
+    color: #b5b5b5;
+}
+
+div.edit_element {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.edit_pencil_icon {
+    width: 20px;
+    height: 20px;
+}
+
+.club-page-cover-photo {
+    height: 400px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
+/* -- PERSONAL ACCOUNT PAGE -- */
+
+
+.info {
+    margin-bottom: 20px;
+}
+
+.main-content .container .left-div button {
+    margin-top: 40px;
+}
+
+.invalid {
+    border: 1px solid red;
+    /* Example: Red border for invalid input */
+}
+
+.error-message {
+    color: red;
+    /* Example: Red text color for error message */
+    font-size: 12px;
+    /* Example: Adjust the font size */
+    margin-top: 5px;
+    /* Example: Add some space between the input field and the error message */
+}
+
+.content button {
+    background-color: #71A39E;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.content button:hover {
+    background-color: #63938e;
+}
+
+.centered-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* -- EMAIL FORM -- */
+
+.email-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+#recipients {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Styling for the checkbox */
+#select-all {
+    margin-bottom: 10px;
+}
+
+#select-all-label {
+    font-weight: bold;
+}
+
+#test .rego-content input[type="checkbox"] {
+    width: auto;
+}
