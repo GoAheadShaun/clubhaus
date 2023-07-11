@@ -1,0 +1,12 @@
+<div class="event-name"><h2>Event 1 Name</h2></div>
+        <div class="event-info">
+            <p><strong>Date and time:</strong> 01/01/2021, 12:00pm</p>
+            <p><strong>Location:</strong> 123 Fake Street</p>
+            <p><strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus
+                lacinia ipsum sit amet laoreet. Fusce fringilla luctus libero ut ultricies. Duis ut est eu erat viverra
+                bibendum ut eu risus. Donecut tellus non neque rutrum sagittis.</p>
+        </div>
+        <div class="event-image">
+              <img src="images/cosmic_catch_up.jpeg" alt="Event1 Image">
+        </div>
+        <button type="button" class="rsvp-button green">RSVP</button>
