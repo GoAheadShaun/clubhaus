@@ -1,11 +1,11 @@
 # clubhaus
-Features:
+### Features:
 
-Non-logged In User:
+### Non-logged In User:
 	- Home Page
 	- Club Pages
 
-Logged-In User:
+### Logged-In User:
 	- Ability to register and log in with Google Authentication
 	- Home Page
 	- Club Pages
@@ -21,7 +21,7 @@ Logged-In User:
 		- Users Personal Details
 		- Clubs that user is a member of
 
-Club Manager:
+### Club Manager:
 	- Club Manager Home Page
 		- Ability to create events
 		- Ability to view events
@@ -29,7 +29,7 @@ Club Manager:
 		- Ability to view club members
 		- Ability to write emails and send updates to all club members and singular club members
 
-System Admin:
+### System Admin:
 	- System Admin Home Page
 		- View Personal Information
 		- View Clubs
