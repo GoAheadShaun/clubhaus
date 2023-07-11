@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Events</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+
+<body onload="checkMember(2);renderUpEvents(2)">
+		<header>
+			<div v-on:load="isLoggedInStatus" id="test" class="top-bar-transparent inline-content">
+				<div class="logo">
+					<img src="images/clubhaus_logo.png" alt="Website Logo">
+				</div>
+				<div class="search">
+					<input type="text" class="search">
+				</div>
+				<div class="sign">
+					<div class="vertical-div drop-down">
+						<button class="red" onclick="seeSignInOptions()" v-if="!isLoggedIn" id="loginBtn" type="button">Log In</button>
+						<button id="loginUserBtn" type="button" class="red" style="display: none;" onclick="visitLogin()">User</button>
+						<button id="loginManagerBtn" type="button" class="red"  style="display: none;">Club Manager</button>
+						<button id="loginAdminBtn" type="button" class="red"  style="display: none;">System Admin</button>
+					</div>
+					<button class="red" onclick="visitRegister()" v-if="!isLoggedIn" id="registerBtn"
+						type="button">Register</button>
+					<button class="red" onclick="visitMyAccount()" v-if="isLoggedIn" id="myAccountBtn" type="button">My
+						Account</button>
+					<button class="red" onclick="visitMyEvent()" v-if="isLoggedIn" id="myEventsBtn" type="button">My Events</button>
+					<button class="red logout" onclick="logout()" v-if="isLoggedIn" id="logoutBtn" type="button">Log out</button>
+				</div>
+
+			</div>
+	</header>
+
+    <div class="main-content">
+        <div class="content">
+            <h1>Adelaide University Computer Science Club</h1>
+        </div>
+        <div class="club-event-upcoming-past-buttons">
+            <button class="red" onclick="renderUpEvents(2)" type="button">Upcoming</button>
+            <button class="red" onclick="renderPastEvents(2)" type="button">Past</button>
+        </div>
+        <div class="events">
+
+		</div>
+	</div>
+
+	<header class="bottom-bar">
+		<div class="left-item">Item 1</div>
+		<div class="center-item">Item 2</div>
+		<div class="right-item">Item 3</div>
+	</header>
+	<script src="/javascripts/home.js"></script>
+</body>
+
+</html>

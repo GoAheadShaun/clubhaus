@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Event Details</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+
+<body onload="clubinfo();renderUpManagerEvents();">
+    <header>
+        <div v-on:load = "isLoggedInStatus" id="test" class="top-bar-transparent inline-content">
+			<div class="logo">
+				<img src="images/clubhaus_logo.png" alt="Website Logo">
+			</div>
+            <div class="sign">
+                <button class="red" onclick="visitMyAccount()" v-if = "isManagerLoggedIn" id="myAccountBtn" type="button">My Account</button>
+                <button  class="red logout" onclick="logout()" v-if="isManagerLoggedIn" id="logoutBtn" type="button">Log out</button>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="main-content">
+        <div class="content">
+            <h1>Club Manager Home Page</h1>
+			<h2 id="club-button">Club Name</h2>
+        </div>
+        <div class="inline-content">
+            <button class="red" onclick="goCreateEvent()" id="create-event-button" type="button">Create Event</button>
+            <button class="red" onclick="sendEmail()" id="send-announcement-button" type="button">Send Announcement</button>
+            <button class="red" onclick="sendEmail()" id="write-email-button" type="button">Write Email</button>
+            <button class="red" type="button" onclick="openClubMemberPopup()">View Club Members</button>
+
+            <div class="popup-container" id="popupContainer">
+				<div class="inline-content" style="align-items: center;">
+					<h2>Members of the clubs</h2>
+					<button class="red" style="width:auto;" type="button" onclick="closeClubMemberPopup()">X</button>
+				</div>
+                <ul id="members">
+
+
+                </ul>
+            </div>
+        </div>
+
+        <h3>Upcoming Events</h3>
+        <div class="events">
+
+        </div>
+    </div>
+
+	<footer>
+		<div>
+			<p><b>Services</b></p>
+			<p>About</p>
+			<p>Help Desk</p>
+			<p>Careers</p>
+			<p>Security</p>
+			<p>Privacy</p>
+			<p>Accessability</p>
+		</div>
+		<div>
+			<p><b>Connec Your Socials</b></p>
+			<p>Data Transfer</p>
+			<p>Contact Support</p>
+			<p>Instagram</p>
+			<p>Facebook</p>
+			<p>Twitter</p>
+		</div>
+		<div>
+			<p><b>Register a Club</b></p>
+			<p>Event Policies</p>
+			<p>Systems Planner</p>
+			<p>Payment Systems</p>
+			<p>Registration Issues</p>
+		</div>
+	</footer>
+
+    <script src="/javascripts/manager.js"></script>
+    <script src="/javascripts/club_manager_page.js"></script>
+</body>
+
+</html>

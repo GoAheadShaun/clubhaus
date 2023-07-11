@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Create Event</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+
+<body>
+	<header>
+        <div v-on:load = "isLoggedInStatus" id="test" class="top-bar-transparent inline-content">
+			<div class="logo">
+				<img onclick="goManagerHome()" src="images/clubhaus_logo.png" alt="Website Logo">
+			</div>
+            <div class="sign">
+                <button class="red" onclick="visitMyAccount()" v-if = "isManagerLoggedIn" id="myAccountBtn" type="button">My Account</button>
+                <button class="red logout" onclick="logout()" v-if="isManagerLoggedIn" id="logoutBtn" type="button">Log out</button>
+            </div>
+        </div>
+	</header>
+
+
+    <div class="main-content">
+        <div class="rego-content">
+            <h1>Create Event</h1>
+            <form>
+                <label for="event-name">Event Name:</label>
+                <input type="text" id="event-name" name="event-name" required>
+
+                <label for="event-time">Time:</label>
+                <input type="time" id="event-time" name="event-time" required>
+
+                <label for="event-date">Date:</label>
+                <input type="date" id="event-date" name="event-date" required>
+
+                <label for="event-location">Location:</label>
+                <input type="text" id="event-location" name="event-location" required>
+
+                <label for="shortevent-description">Event Description:</label>
+                <textarea id="shorttextbox-description" name="shorttextbox-description" class="shorttextbox-description"
+                    required></textarea>
+
+                <label for="event-description">Event Description:</label>
+                <textarea id="textbox-description" name="textbox-description" class="textbox-description"
+                    required></textarea>
+            </form>
+            <form id="upload-form">
+                <input type="file" name="file" />
+                <button class="green" type="submit">Upload</button>
+            </form>
+              <p id="status-message">&nbsp;</p>
+            <button class="green" type="button" onclick="create()">Create Event</button>
+        </div>
+    </div>
+
+
+	<script src="/javascripts/manager.js"></script>
+    <script src="/javascripts/club_manager_page.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Events</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+
+<body onload="checkMember(1);renderUpEvents(1)">
+	<header>
+		<div class="top-bar-transparent inline-content">
+			<div class="logo">
+				<img onclick="goHome()" src="images/clubhaus_logo.png" alt="Website Logo">
+			</div>
+
+			<div class="search">
+				<input type="text" class="search">
+			</div>
+
+			<div v-on:load="isLoggedInStatus" id="test">
+				<div class="sign">
+			
+					<button class="red" onclick="visitMyAccount()" v-if="isLoggedIn" id="myAccountBtn" type="button">My Account</button>
+					<button class="red" onclick="visitMyEvent()" v-if="isLoggedIn" id="myEventsBtn" type="button">My Events</button>
+                    <button class="red logout" onclick="logout()" v-if="isLoggedIn" id="logoutBtn" type="button">Log out</button>
+				</div>
+			</div>
+		</div>
+	</header>
+
+
+    <div class="main-content">
+        <div class="content">
+            <h1>Adelaide University Space Society Events</h1>
+        </div>
+        <div class="club-event-upcoming-past-buttons">
+            <button class="red" onclick="renderUpEvents(1)" type="button">Upcoming</button>
+            <button class="red" onclick="renderPastEvents(1)" type="button">Past</button>
+        </div>
+        <div class="events">
+
+        </div>
+    </div>
+
+	<footer>
+		<div>
+			<p><b>Services</b></p>
+			<p>About</p>
+			<p>Help Desk</p>
+			<p>Careers</p>
+			<p>Security</p>
+			<p>Privacy</p>
+			<p>Accessability</p>
+		</div>
+		<div>
+			<p><b>Connec Your Socials</b></p>
+			<p>Data Transfer</p>
+			<p>Contact Support</p>
+			<p>Instagram</p>
+			<p>Facebook</p>
+			<p>Twitter</p>
+		</div>
+		<div>
+			<p><b>Register a Club</b></p>
+			<p>Event Policies</p>
+			<p>Systems Planner</p>
+			<p>Payment Systems</p>
+			<p>Registration Issues</p>
+		</div>
+	</footer>
+    <script src="/javascripts/home.js"></script>
+</body>
+</html>

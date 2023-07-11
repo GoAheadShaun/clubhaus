@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AUSS</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+
+<body onload="checkJoinSpec1();checkpref1();">
+	<header class="cover-photo auss-header">
+
+		<div v-on:load="isLoggedInStatus" id="test" class="top-bar-transparent inline-content">
+			<div class="logo">
+				<img onclick="goHome()" src="images/clubhaus_logo.png" alt="Website Logo">
+			</div>
+			<div class="search">
+				<input type="text" class="search">
+			</div>
+			<div class="sign">
+				<div class="vertical-div drop-down">
+					<button class="red" onclick="seeSignInOptions()" v-if="!isLoggedIn" id="loginBtn" type="button">Log In</button>
+					<button id="loginUserBtn" type="button" class="red" style="display: none;" onclick="visitLogin()">User</button>
+					<button id="loginManagerBtn" type="button" class="red"  style="display: none;"  onclick="visitManagerLogin()">Club Manager</button>
+					<button id="loginAdminBtn" type="button" class="red"  style="display: none;" onclick="visitAdminLogin()">System Admin</button>
+				</div>
+				<button class="red" onclick="visitRegister()" v-if="!isLoggedIn" id="registerBtn"
+					type="button">Register</button>
+				<button class="red" onclick="visitMyAccount()" v-if="isLoggedIn" id="myAccountBtn" type="button">My
+					Account</button>
+				<button class="red" onclick="visitMyEvent()" v-if="isLoggedIn" id="myEventsBtn" type="button">My Events</button>
+				<button class="red logout" onclick="logout()" v-if="isLoggedIn" id="logoutBtn" type="button">Log out</button>
+			</div>
+
+		</div>
+	</header>
+
+    <div class="main-content inline-content">
+		<div class="vertical-div">
+                <h1>Adelaide University Space Society</h1>
+                <h3>About</h3>
+                <p>The Adelaide University Space Society is a club for anyone with a passion for space, no matter what
+                    you study. We exist to create a community of space enthusiasts, and connect students to the space
+                    industry. We do this through our many fantastic events, with a variety of fun, social, and
+                    professional events across the year. We want to capture your passion for space and show you how that
+                    passion can lead to incredible careers. </p>
+                <p>Did we mention that registration is FREE!!!
+                </p>
+                <p>Members get a discount on select events, as well as access to our merch! If you would like to
+                    register, please fill in the form below.
+                </p>
+                <p>A massive thank you to our industry partners who make it possible for us to deliver such high quality
+                    events without charging a membership fee. They are:
+                </p>
+                <p>KPMG, ELA, NOVA Systems
+                </p>
+                <p>AWS, Silentium Defence, SASIC
+                </p>
+                <p>Southern Launch
+                </p>
+                <p>President Name: Michael Smallridge
+                </p>
+                <h3>Socials</h3>
+                <p><strong>Instagram:</strong> https://instagram.com/au_space.society</p>
+                <p><strong>Facebook:</strong> https://www.facebook.com/AuSpaceSociety</p>
+                <p><strong>Email:</strong> space@clubs.youx.org.au</p>
+                <p><strong>Website:</strong> https://youx.org.au/interests/clubs/join/space/</p>
+            <img class="club-photo" src="images/AUSS_extra_image.webp" alt="Club Photo">
+        </div>
+
+
+        <div class="vertical-div">
+            <div>
+                <button onclick="joinClubSpec1()" type="button" class="green join-button">Join Club</button>
+            </div>
+            <div class="center-content vertical-div">
+
+				<div class = "switch" style="display: none;">
+					<label>Change email preference</label>
+					<label class="switch-label" >
+						<input type="checkbox" id="notificationSwitch" onchange="toggleNotification1()">
+						<span class="slider round"></span>
+					 </label>
+				</div>
+			</div>
+            <div class="grey-container event-list">
+                <h3>Events</h3>
+                <ul>
+                    <li>
+                        <h4>Event 1</h4>
+                        <p>Date: June 1, 2023</p>
+                        <p>Location: San Francisco, CA</p>
+                        <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </li>
+                    <li>
+                        <h4>Event 2</h4>
+                        <p>Date: June 15, 2023</p>
+                        <p>Location: New York, NY</p>
+                        <p>Description: Nulla auctor, metus eget ultricies iaculis, enim odio elementum velit, eu
+                            malesuada nunc lacus et leo.</p>
+                    </li>
+                    <li>
+                        <h4>Event 3</h4>
+                        <p>Date: July 1, 2023</p>
+                        <p>Location: London, UK</p>
+                        <p>Description: Fusce eget diam quis turpis viverra dignissim.</p>
+                    </li>
+                </ul>
+				<br>
+                <button onclick="visitSpaceEvents()" type="button" class="red">See More Events</button>
+            </div>
+        </div>
+
+    </div>
+
+
+	<footer>
+		<div>
+			<p><b>Services</b></p>
+			<p>About</p>
+			<p>Help Desk</p>
+			<p>Careers</p>
+			<p>Security</p>
+			<p>Privacy</p>
+			<p>Accessability</p>
+		</div>
+		<div>
+			<p><b>Connec Your Socials</b></p>
+			<p>Data Transfer</p>
+			<p>Contact Support</p>
+			<p>Instagram</p>
+			<p>Facebook</p>
+			<p>Twitter</p>
+		</div>
+		<div>
+			<p><b>Register a Club</b></p>
+			<p>Event Policies</p>
+			<p>Systems Planner</p>
+			<p>Payment Systems</p>
+			<p>Registration Issues</p>
+		</div>
+	</footer>
+    <script src="/javascripts/home.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Event Details</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+</head>
+
+<body>
+	<header class="cover-photo">
+		<img class="header-image" src="images/csc_header.jpeg" alt="Header Image">
+		<div class="top-bar-transparent inline-content">
+			<div class="logo">
+				<img onclick="goHome()" src="images/clubhaus_logo.png" alt="Website Logo">
+			</div>
+
+			<div class="search">
+				<input type="text" class="search">
+			</div>
+			<div v-on:load="isLoggedInStatus" id="test">
+				<div class="sign">
+					<button class="red" onclick="visitLogin()" v-if="!isLoggedIn" id="loginBtn" type="button">Log In</button>
+					<button class="red" onclick="visitRegister()" v-if="!isLoggedIn" id="registerBtn"
+						type="button">Register</button>
+					<button class="red" onclick="visitMyAccount()" v-if="isLoggedIn" id="myAccountBtn" type="button">My
+						Account</button>
+					<button class="red" onclick="visitMyEvent()" v-if="isLoggedIn" id="myEventsBtn" type="button">My Events</button>
+				</div>
+			</div>
+		</div>
+	</header>
+
+    <div class="main-content">
+        <div class="content">
+            <h1>Hacked Cybersecurity Panel</h1>
+            <button type="button" class="green">Computer Science Club</button>
+			<button type="button" class="green">RSVP</button>
+            <h3>About</h3>
+            <p>Our Hacked Cybersecurity Panel is happening this Wednesday! We're excited to hear from our expert
+                panelists and gain some valuable insights into the world of cybersecurity. </p>
+
+            <p> Make sure to submit any questions you want answered using the link below before the event. Food and soft
+                drinks will be provided and we hope to you all there! 🚀🔒
+            </p>
+
+            <p>EDIT: Unfortunately, Deloitte will not be able to join us for our upcoming cybersecurity panel. We
+                appreciate their previous interest and will still be hosting an engaging event. Hope to see everyone
+                there!</p>
+
+            <p>
+                Questions for the panel: <a href="https://proxy.link.app/198886.../forms.gle/Wgo2rhXKJN7VdART7"
+                    target="_blank">https://proxy.link.app/198886.../forms.gle/Wgo2rhXKJN7VdART7</a>
+            </p>
+
+            <h3>Details</h3>
+            <p><strong>Date:</strong> 05/04/2023</p>
+            <p><strong>Time:</strong> 6:00pm</p>
+            <p><strong>Duration:</strong> 2 hours</p>
+            <p><strong>Location:</strong> Online</p>
+        </div>
+        <img class="club-photo" src="images/csc-hacked_cybersecurity_panel.jpg" alt="Event Photo">
+    </div>
+
+
+	<footer>
+		<div>
+			<p><b>Services</b></p>
+			<p>About</p>
+			<p>Help Desk</p>
+			<p>Careers</p>
+			<p>Security</p>
+			<p>Privacy</p>
+			<p>Accessability</p>
+		</div>
+		<div>
+			<p><b>Connec Your Socials</b></p>
+			<p>Data Transfer</p>
+			<p>Contact Support</p>
+			<p>Instagram</p>
+			<p>Facebook</p>
+			<p>Twitter</p>
+		</div>
+		<div>
+			<p><b>Register a Club</b></p>
+			<p>Event Policies</p>
+			<p>Systems Planner</p>
+			<p>Payment Systems</p>
+			<p>Registration Issues</p>
+		</div>
+	</footer>
+    <script src="/javascripts/csc_event_page.js"></script>
+	<script src="/javascripts/home.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{Website Name}</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="/javascripts/admin_create_email.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="top-bar-transparent inline-content">
+            <div class="logo-image">
+                <img onclick="goHome()" src="images/clubhaus_logo.png" alt="Website Logo">
+            </div>
+            <div class="search">
+                <input type="text" class="search">
+            </div>
+
+			<div class="sign">
+				<button type="button" class="red">My Account</button>
+                <button class="red logout" onclick="logout()" v-if="isLoggedIn" id="logoutBtn" type="button">Log out</button>
+			</div>
+		</div>
+	</header>
+
+
+    <div id="test" class="main-content">
+        <div class="rego-content">
+            <h1>Send Email to Club Managers</h1>
+            <form>
+                <label for="event-name">Subject Heading:</label>
+                <input type="text" id="event-name" name="event-name" required>
+
+                <label v-if="!selectAllUsers" for="recipients">Club Manager Recipients:</label>
+                <select v-if="!selectAllUsers" id="recipients" name="recipients" required
+                    v-model="selectedRecipients"></select>
+                <br>
+
+                <label for="select-all">Select All Club Managers As Recipients:</label>
+                <input type="checkbox" id="select-all" v-model="selectAllUsers" @change="populateRecipientsDropdown">
+                <br>
+
+                <label for="event-description">Email:</label>
+                <textarea id="textbox-description" name="textbox-description" class="textbox-description"
+                    required></textarea>
+
+                <button @click="sendEmail" class="green" type="button">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div>
+            <p><b>Services</b></p>
+            <p>About</p>
+            <p>Help Desk</p>
+            <p>Careers</p>
+            <p>Security</p>
+            <p>Privacy</p>
+            <p>Accessability</p>
+        </div>
+        <div>
+            <p><b>Connec Your Socials</b></p>
+            <p>Data Transfer</p>
+            <p>Contact Support</p>
+            <p>Instagram</p>
+            <p>Facebook</p>
+            <p>Twitter</p>
+        </div>
+        <div>
+            <p><b>Register a Club</b></p>
+            <p>Event Policies</p>
+            <p>Systems Planner</p>
+            <p>Payment Systems</p>
+            <p>Registration Issues</p>
+        </div>
+    </footer>
+    <!-- <script src="/javascripts/home.js"></script> -->
+</body>
+
+</html>

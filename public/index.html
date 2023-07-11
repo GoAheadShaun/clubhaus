@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Clubhaus</title>
+	<link rel="stylesheet" href="stylesheets/styles.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+
+<body onload="checkJoin1();checkJoin2();">
+	<header class="cover-photo home-page-header">
+		<div v-on:load="isLoggedInStatus" id="test" class="top-bar-transparent inline-content">
+			<div class="logo">
+				<img src="images/clubhaus_logo.png" alt="Website Logo">
+			</div>
+			<div class="search">
+				<input type="text" class="search">
+			</div>
+			<div class="sign">
+				<div class="vertical-div drop-down">
+					<button class="red" onclick="seeSignInOptions()" v-if="!isLoggedIn" id="loginBtn" type="button">Log In</button>
+						<button id="loginUserBtn" type="button" class="red" style="display: none;" onclick="visitLogin()">User</button>
+						<button id="loginManagerBtn" type="button" class="red"  style="display: none;"  onclick="visitManagerLogin()">Club Manager</button>
+						<button id="loginAdminBtn" type="button" class="red"  style="display: none;" onclick="visitAdminLogin()">System Admin</button>
+				</div>
+				<button class="red" onclick="visitRegister()" v-if="!isLoggedIn" id="registerBtn"
+					type="button">Register</button>
+				<button class="red" onclick="visitMyAccount()" v-if="isLoggedIn" id="myAccountBtn" type="button">My
+					Account</button>
+				<button class="red" onclick="visitMyEvent()" v-if="isLoggedIn" id="myEventsBtn" type="button">My Events</button>
+				<button class="red logout" onclick="logout()" v-if="isLoggedIn" id="logoutBtn" type="button">Log out</button>
+			</div>
+
+		</div>
+		<h1 class="slogan">Enhancing your uni life.</h1>
+
+	</header>
+
+	<div class="main-content">
+		<h1>Adelaide University Clubs</h1>
+		<div class="grid-content">
+			<div class="grey-container club-box">
+				<div onclick="visitSpace()" id="space" class="club-logo">
+					<img src="images/AUSS_logo.png" alt="Club1 Image">
+				</div>
+				<div onclick="visitSpace()" class="vertical-div">
+					<h2>Adelaide University Space Society</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+						finibus lacinia ipsum sit amet laoreet.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					</p>
+					<p class="club-category">Activities and Hobbies</p>
+				</div>
+				<button onclick="joinClub1()" type="button" class="green join-button">Join Club</button>
+			</div>
+
+			<div class="grey-container club-box">
+				<div onclick="visitComputer()" id="computer" class="club-logo">
+					<img src="images/cs_club.png" alt="Club2 Image">
+				</div>
+				<div onclick="visitComputer()"  class="vertical-div">
+					<h2>Computer Science Club</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+						finibus lacinia ipsum sit amet laoreet.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					</p>
+					<p class="club-category">Education</p>
+				</div>
+				<button onclick="joinClub2()" type="button" class="green join-button">Join Club</button>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<div>
+			<p><b>Services</b></p>
+			<p>About</p>
+			<p>Help Desk</p>
+			<p>Careers</p>
+			<p>Security</p>
+			<p>Privacy</p>
+			<p>Accessability</p>
+		</div>
+		<div>
+			<p><b>Connec Your Socials</b></p>
+			<p>Data Transfer</p>
+			<p>Contact Support</p>
+			<p>Instagram</p>
+			<p>Facebook</p>
+			<p>Twitter</p>
+		</div>
+		<div>
+			<p><b>Register a Club</b></p>
+			<p>Event Policies</p>
+			<p>Systems Planner</p>
+			<p>Payment Systems</p>
+			<p>Registration Issues</p>
+		</div>
+	</footer>
+	<script src="/javascripts/home.js"></script>
+</body>
+
+</html>

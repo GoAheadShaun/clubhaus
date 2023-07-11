@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Event Details</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+</head>
+
+<body>
+	<header class="cover-photo">
+		<img class="header-image" src="images/csc_header.jpeg" alt="Header Image">
+		<div class="top-bar-transparent inline-content">
+			<div class="logo">
+				<img onclick="goHome()" src="images/clubhaus_logo.png" alt="Website Logo">
+			</div>
+
+			<div class="search">
+				<input type="text" class="search">
+			</div>
+			<div v-on:load="isLoggedInStatus" id="test">
+				<div class="sign">
+					<button class="red" onclick="visitLogin()" v-if="!isLoggedIn" id="loginBtn" type="button">Log In</button>
+					<button class="red" onclick="visitRegister()" v-if="!isLoggedIn" id="registerBtn"
+						type="button">Register</button>
+					<button class="red" onclick="visitMyAccount()" v-if="isLoggedIn" id="myAccountBtn" type="button">My
+						Account</button>
+					<button class="red" onclick="visitMyEvent()" v-if="isLoggedIn" id="myEventsBtn" type="button">My Events</button>
+				</div>
+			</div>
+		</div>
+	</header>
+    <div class="main-content">
+        <div class="content">
+            <h1>Data Science In The Real World</h1>
+            <button type="button" class="green">Computer Science Club</button>
+            <button type="button" class="green">RSVP</button>
+            <h3>About</h3>
+            <p>Enough talk about theory! Have you ever wondered how Data Science is actually used in the real world?</p>
+
+            <p> Join us on Wednesday, June 24th at the much-anticipated event “Data Science in the real world” as we
+                delve into the exciting realm of data science and its profound impact on our everyday lives with our
+                esteemed guest Jake Prajer, a renowned Senior Analyst from Deloitte. With years of experience and a
+                wealth of knowledge in the field, Jake is here to share his insights, expertise, and real-world examples
+                that will leave you inspired and amazed.
+            </p>
+
+            <p>But it doesn't end there! Following the presentation, we have an exciting Q&amp;A session where you'll have
+                the opportunity to interact directly with Jake. This is your exclusive chance to gain valuable advice,
+                dive deeper into, and explore your potential career in the world of data science!</p>
+
+            <p>But it doesn't end there! Following the presentation, we have an exciting Q&amp;A session where you'll have
+                the opportunity to interact directly with Jake. This is your exclusive chance to gain valuable advice,
+                dive deeper into, and explore your potential career in the world of data science!</p>
+
+            <h3>Details</h3>
+            <p><strong>Date:</strong> 24/06/2023</p>
+            <p><strong>Time:</strong> 6:00pm</p>
+            <p><strong>Duration:</strong> 2 hours</p>
+            <p><strong>Location:</strong> Majoribanks 126 Santos Lecture Theatre</p>
+        </div>
+        <img class="club-photo" src="images/csc-data_science_in_the_real_world.jpg" alt="Event Photo">
+    </div>
+
+	<footer>
+		<div>
+			<p><b>Services</b></p>
+			<p>About</p>
+			<p>Help Desk</p>
+			<p>Careers</p>
+			<p>Security</p>
+			<p>Privacy</p>
+			<p>Accessability</p>
+		</div>
+		<div>
+			<p><b>Connec Your Socials</b></p>
+			<p>Data Transfer</p>
+			<p>Contact Support</p>
+			<p>Instagram</p>
+			<p>Facebook</p>
+			<p>Twitter</p>
+		</div>
+		<div>
+			<p><b>Register a Club</b></p>
+			<p>Event Policies</p>
+			<p>Systems Planner</p>
+			<p>Payment Systems</p>
+			<p>Registration Issues</p>
+		</div>
+	</footer>
+    <script src="/javascripts/csc_event_page.js"></script>
+	<script src="/javascripts/home.js"></script>
+</body>
+
+</html>

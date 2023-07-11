@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Event Details</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+
+<body onload="placeInfo();clubinfo();">
+	<header>
+        <div v-on:load = "isLoggedInStatus" id="test" class="top-bar-transparent inline-content">
+			<div class="logo">
+				<img onclick="goManagerHome()" src="images/clubhaus_logo.png" alt="Website Logo">
+			</div>
+            <div class="sign">
+                <button onclick="visitMyAccount()" v-if = "isManagerLoggedIn" id="myAccountBtn" type="button">My Account</button>
+                <button class="red  logout" onclick="logout()" v-if="isManagerLoggedIn" id="logoutBtn" type="button">Log out</button>
+            </div>
+        </div>
+	</header>
+
+    <div class="main-content">
+        <h1>My Account</h1>
+        <div class="container">
+            <div class="left-div">
+                <h3>Personal Information</h3>
+                <div class="info">
+                    <p><strong>Name:</strong></p>
+                    <p><strong>Email:</strong></p>
+                    <p id="club-button"><strong>Position:</strong></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+	<footer>
+		<div>
+			<p><b>Services</b></p>
+			<p>About</p>
+			<p>Help Desk</p>
+			<p>Careers</p>
+			<p>Security</p>
+			<p>Privacy</p>
+			<p>Accessability</p>
+		</div>
+		<div>
+			<p><b>Connec Your Socials</b></p>
+			<p>Data Transfer</p>
+			<p>Contact Support</p>
+			<p>Instagram</p>
+			<p>Facebook</p>
+			<p>Twitter</p>
+		</div>
+		<div>
+			<p><b>Register a Club</b></p>
+			<p>Event Policies</p>
+			<p>Systems Planner</p>
+			<p>Payment Systems</p>
+			<p>Registration Issues</p>
+		</div>
+	</footer>
+
+    <script src="/javascripts/manager.js"></script>
+    <script src="/javascripts/club_manager_page.js"></script>
+
+</body>
+
+</html>

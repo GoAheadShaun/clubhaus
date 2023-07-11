@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Event Details</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+
+<body onload="checkJoin1();checkpref1();">
+	<header class="cover-photo auss-header">
+
+		<div v-on:load="isLoggedInStatus" id="test" class="top-bar-transparent inline-content">
+			<div class="logo">
+				<img src="images/clubhaus_logo.png" alt="Website Logo">
+			</div>
+			<div class="search">
+				<input type="text" class="search">
+			</div>
+			<div class="sign">
+				<div class="vertical-div drop-down">
+					<button class="red" onclick="seeSignInOptions()" v-if="!isLoggedIn" id="loginBtn" type="button">Log In</button>
+					<button id="loginUserBtn" type="button" class="red" style="display: none;" onclick="visitLogin()">User</button>
+					<button id="loginManagerBtn" type="button" class="red"  style="display: none;">Club Manager</button>
+					<button id="loginAdminBtn" type="button" class="red"  style="display: none;">System Admin</button>
+				</div>
+				<button class="red" onclick="visitRegister()" v-if="!isLoggedIn" id="registerBtn"
+					type="button">Register</button>
+				<button class="red" onclick="visitMyAccount()" v-if="isLoggedIn" id="myAccountBtn" type="button">My
+					Account</button>
+				<button class="red" onclick="visitMyEvent()" v-if="isLoggedIn" id="myEventsBtn" type="button">My Events</button>
+				<button class="red logout" onclick="logout()" v-if="isLoggedIn" id="logoutBtn" type="button">Log out</button>
+			</div>
+
+		</div>
+	</header>
+
+    <div class="main-content">
+		<div class="inline-content">
+			<div class="vertical-div">
+				<h1>The Toliman Space Telescope</h1>
+				<h4  id="club-button">Adelaide University Space Society Club</h4>
+				<br>
+				<h3>About</h3>
+				<p>Are We on the Verge of Finding Earth-like Exoplanets in Our Solar Neighborhood, or Do We Lack the
+					Essential Tools? 🔭🤔
+				</p>
+				<p>
+					Find out on the 26th of June at 10:45am in IW 5.57 in this not-to-miss seminar! ☄
+					Join Dr. Chris Betters and learn all about the challenges faced with detecting earth-analogues as well
+					as the Toliman Space Telescope and how it will use astrometric detection to search for exoplanets
+					targeting the Alpha Centauri system. 😲🛰
+				</p>
+				<p>
+					This will also be livestreamed online via zoom.<br>
+					Link: <a href="https://adelaide.zoom.us/j/85195338392"
+						target="_blank">https://adelaide.zoom.us/j/85195338392</a>
+				</p>
+
+				<h3>Details</h3>
+				<p><strong>Date:</strong> 26/06/2023</p>
+				<p><strong>Time:</strong> 10:45am</p>
+				<p><strong>Duration:</strong> 2 hours</p>
+				<p><strong>Location:</strong> Ingkarni Wardli 5.57</p>
+			</div>
+			<div class="vertical-div" style="width: 300px;">
+				<button type="button" id="rsvp" class="green rsvp-button">RSVP</button>
+			</div>
+		</div>
+
+        <img class="club-photo" src="images/auss_dr_chris_betters.png" alt="Event Photo">
+        <img class="club-photo" src="images/auss-toliman_space_telescope.png" alt="Event Photo">
+    </div>
+
+
+	<footer>
+		<div>
+			<p><b>Services</b></p>
+			<p>About</p>
+			<p>Help Desk</p>
+			<p>Careers</p>
+			<p>Security</p>
+			<p>Privacy</p>
+			<p>Accessability</p>
+		</div>
+		<div>
+			<p><b>Connec Your Socials</b></p>
+			<p>Data Transfer</p>
+			<p>Contact Support</p>
+			<p>Instagram</p>
+			<p>Facebook</p>
+			<p>Twitter</p>
+		</div>
+		<div>
+			<p><b>Register a Club</b></p>
+			<p>Event Policies</p>
+			<p>Systems Planner</p>
+			<p>Payment Systems</p>
+			<p>Registration Issues</p>
+		</div>
+	</footer>
+
+    <script src="/javascripts/auss_event_page.js"></script>
+	<script src="/javascripts/home.js"></script>
+</body>
+
+</html>

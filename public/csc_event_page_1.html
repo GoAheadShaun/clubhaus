@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Event Details</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+</head>
+
+<body>
+    <header class="cover-photo">
+		<img class="header-image" src="images/csc_header.jpeg" alt="Header Image">
+		<div class="top-bar-transparent inline-content">
+			<div class="logo">
+				<img onclick="goHome()" src="images/clubhaus_logo.png" alt="Website Logo">
+			</div>
+			<div class="search">
+				<input type="text" class="search">
+			</div>
+
+			<div v-on:load="isLoggedInStatus" id="test">
+				<div class="sign">
+					<button class="red" onclick="visitLogin()" v-if="!isLoggedIn" id="loginBtn" type="button">Log In</button>
+					<button class="red" onclick="visitRegister()" v-if="!isLoggedIn" id="registerBtn"
+						type="button">Register</button>
+					<button class="red" onclick="visitMyAccount()" v-if="isLoggedIn" id="myAccountBtn" type="button">My
+						Account</button>
+					<button class="red" onclick="visitMyEvent()" v-if="isLoggedIn" id="myEventsBtn" type="button">My Events</button>
+				</div>
+			</div>
+		</div>
+	</header>
+
+    <div class="main-content">
+        <div class="content">
+            <h1>Women In STEM</h1>
+            <button type="button" class="green" >Computer Science Club</button>
+            <button type="button" class="green" >RSVP</button>
+            <h3>About</h3>
+            <p>📢📢 The IET SA & NT are excited to announce our Women in STEM event for 2023.</p>
+
+            <p> We are very fortunate to have Dr Marissa Bond, Alice Chan, Dr Vienna Tran and Kate Ford to join us as
+                our guest panellists at Stamford Plaza Adelaide on Friday 12th of June.</p>
+
+            <p>✨ Join us as we hear about these amazing individuals' journeys, and be ready to get enlightened by their
+                perspective on the IET's societal challenges during the Q & A session.</p>
+
+            <p>See you there 🫶</p>
+
+            <h3>Details</h3>
+            <p><strong>Date:</strong> 12/06/2023</p>
+            <p><strong>Time:</strong> 6:00pm</p>
+            <p><strong>Duration:</strong> 3 hours</p>
+            <p><strong>Location:</strong> Stanford Plaza Adelaide</p>
+        </div>
+        <img class="club-photo" src="images/csc-women_in_stem.jpg" alt="Event Photo">
+    </div>
+
+
+	<footer>
+		<div>
+			<p><b>Services</b></p>
+			<p>About</p>
+			<p>Help Desk</p>
+			<p>Careers</p>
+			<p>Security</p>
+			<p>Privacy</p>
+			<p>Accessability</p>
+		</div>
+		<div>
+			<p><b>Connec Your Socials</b></p>
+			<p>Data Transfer</p>
+			<p>Contact Support</p>
+			<p>Instagram</p>
+			<p>Facebook</p>
+			<p>Twitter</p>
+		</div>
+		<div>
+			<p><b>Register a Club</b></p>
+			<p>Event Policies</p>
+			<p>Systems Planner</p>
+			<p>Payment Systems</p>
+			<p>Registration Issues</p>
+		</div>
+	</footer>
+    <script src="/javascripts/csc_event_page.js"></script>
+	<script src="/javascripts/home.js"></script>
+</body>
+
+</html>

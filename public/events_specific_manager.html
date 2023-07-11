@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Event Details</title>
+  <link rel="stylesheet" href="stylesheets/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+
+<body onload="loadEventDetails()">
+  <header>
+    <div v-on:load="isLoggedInStatus" id="test" class="top-bar-transparent inline-content">
+      <div class="logo">
+        <img onclick="goManagerHome()" src="images/clubhaus_logo.png" alt="Website Logo">
+      </div>
+      <div class="sign">
+        <button class="red" onclick="visitMyAccount()" v-if="isManagerLoggedIn" id="myAccountBtn" type="button">My Account</button>
+        <button  class="red logout" onclick="logout()" v-if="isManagerLoggedIn" id="logoutBtn" type="button">Log out</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-content">
+    <div class="content">
+      <h1 id="event-name">The Toliman Space Telescope</h1>
+      <div class="regist">
+        <button class="rsvp-button" type="button">View RSVP</button>
+        <div class="popup-container" id="popupContainer">
+          <h2>RSVP'D Members of the Event</h2>
+          <ul id="members">
+
+              <!-- Add more list items as needed -->
+          </ul>
+          <div class="centered-button">
+              <button type="button" onclick="closeEventMemberPopup()">Close</button>
+          </div>
+      </div>
+      </div>
+      <h3>About</h3>
+      <p id="description">Event description goes here</p>
+
+      <h3>Details</h3>
+      <p><strong>Date:</strong> <span id="date">26/05/2023</span></p>
+      <p><strong>Location:</strong> <span id="location">Ingkarni Wardli 5.57</span></p>
+    </div>
+    <div class="image-container">
+      <img id="event-image" class="club-photo" src="images/auss_dr_chris_betters.png" alt="Event Photo">
+    </div>
+  </div>
+
+  <footer>
+	<div>
+		<p><b>Services</b></p>
+		<p>About</p>
+		<p>Help Desk</p>
+		<p>Careers</p>
+		<p>Security</p>
+		<p>Privacy</p>
+		<p>Accessability</p>
+	</div>
+	<div>
+		<p><b>Connec Your Socials</b></p>
+		<p>Data Transfer</p>
+		<p>Contact Support</p>
+		<p>Instagram</p>
+		<p>Facebook</p>
+		<p>Twitter</p>
+	</div>
+	<div>
+		<p><b>Register a Club</b></p>
+		<p>Event Policies</p>
+		<p>Systems Planner</p>
+		<p>Payment Systems</p>
+		<p>Registration Issues</p>
+	</div>
+</footer>
+  <script src="/javascripts/manager.js"></script>
+</body>
+
+</html>

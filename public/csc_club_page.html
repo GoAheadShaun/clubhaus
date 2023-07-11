@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>CSC</title>
+	<link rel="stylesheet" href="stylesheets/styles.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+
+<body onload="checkJoinSpec2();checkpref2();">
+	<header class="cover-photo csc-header">
+
+		<div v-on:load="isLoggedInStatus" id="test" class="top-bar-transparent inline-content">
+			<div class="logo">
+				<img onclick="goHome()" src="images/clubhaus_logo.png" alt="Website Logo">
+			</div>
+			<div class="search">
+				<input type="text" class="search">
+			</div>
+			<div class="sign">
+				<div class="vertical-div drop-down">
+					<button class="red" onclick="seeSignInOptions()" v-if="!isLoggedIn" id="loginBtn" type="button">Log
+						In</button>
+					<button id="loginUserBtn" type="button" class="red" style="display: none;"
+						onclick="visitLogin()">User</button>
+					<button id="loginManagerBtn" type="button" class="red" style="display: none;"
+						onclick="visitManagerLogin()">Club Manager</button>
+					<button id="loginAdminBtn" type="button" class="red" style="display: none;"
+						onclick="visitAdminLogin()">System Admin</button>
+				</div>
+				<button class="red" onclick="visitRegister()" v-if="!isLoggedIn" id="registerBtn"
+					type="button">Register</button>
+				<button class="red" onclick="visitMyAccount()" v-if="isLoggedIn" id="myAccountBtn" type="button">My
+					Account</button>
+				<button class="red" onclick="visitMyEvent()" v-if="isLoggedIn" id="myEventsBtn" type="button">My Events</button>
+				<button class="red logout" onclick="logout()" v-if="isLoggedIn" id="logoutBtn" type="button">Log out</button>
+			</div>
+
+		</div>
+	</header>
+
+	<div class="main-content inline-content">
+		<div class="vertical-div">
+			<h1>Computer Science Club</h1>
+			<h3>About</h3>
+			<p>The club has a major focus on education and learning. We run workshops to assist students with their
+				studies and host other types of educational events such as talks and guest lectures.</p>
+			<p>As students, we are doing the best we can with our studies and learn as much as we can to develop our
+				skills.
+			</p>
+			<p>As well as focusing on education we are primarily a social club. Events such as meet and greets,
+				games/movie nights, BBQs, and pub crawls are just some of the social events the club runs each year.
+			</p>
+			<p>And of course, coding is what we do and love. Whether you're searching for some feedback on a project
+				or some practice with technical programming questions the club is great way to meet other people and
+				learn from more experienced students.
+			</p>
+			<p>New members are always welcome! As a member some things you will have access to include computer
+				science talks and workshops, catered social events, a wide network of other computer science
+				students and graduates to learn from and make friends with.</p>
+			<p>First year students:<br>
+				If you are a first year student there are many activities held by the club at the start of the year
+				specifically for you. They will give you a chance to meet other students, help you ease into uni
+				life and give you a head start with your subjects.</p>
+			<h3>Socials</h3>
+			<p><strong>Instagram:</strong> https://instagram.com/compsci.adl</p>
+			<p><strong>Facebook:</strong> https://www.facebook.com/compsci.adl</p>
+			<p><strong>Email:</strong> contact@csclub.org.au</p>
+			<p><strong>Website:</strong> https://csclub.org.au/</p>
+			<img class="club-photo" src="images/csc-club_photo.jpg" alt="Club Photo">
+		</div>
+
+		<div class="vertical-div">
+			<div>
+				<button onclick="joinClubSpec2()" type="button" class="green join-button">Join Club</button>
+			</div>
+			<div class="center-content vertical-div">
+
+				<div class="switch" style="display: none;">
+					<label>Change email preference</label>
+					<label class="switch-label">
+						<input type="checkbox" id="notificationSwitch" onchange="toggleNotification2()">
+						<span class="slider round"></span>
+					</label>
+				</div>
+			</div>
+			<div class="grey-container event-list">
+				<h3>Events</h3>
+				<ul>
+					<li>
+						<h4>Fast Coding</h4>
+						<p>Date: 2023-07-30</p>
+						<p>Time: 11:30am</p>
+						<p>Location: San Francisco, CA</p>
+						<p>Description:
+							Join us for an exhilarating coding event called "Fast Coding"! Get ready to dive into the
+							world of programming, challenge your coding skills, and embrace the thrill of rapid
+							problem-solving.</p>
+					</li>
+					<li>
+						<h4>Anzac Round</h4>
+							<p>Date: June 15, 2023</p>
+							<p>Time: 10:30am</p>
+							<p>Location: New York, NY</p>
+							<p>Description: ANZAC contests are designed to be practice contests for ICPC and is open to
+								all universities across the South Pacific Region.</p>
+					</li>
+				</ul>
+				<button onclick="visitComputerEvents()" type="button" class="red">See More Events</button>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<div>
+			<p><b>Services</b></p>
+			<p>About</p>
+			<p>Help Desk</p>
+			<p>Careers</p>
+			<p>Security</p>
+			<p>Privacy</p>
+			<p>Accessability</p>
+		</div>
+		<div>
+			<p><b>Connec Your Socials</b></p>
+			<p>Data Transfer</p>
+			<p>Contact Support</p>
+			<p>Instagram</p>
+			<p>Facebook</p>
+			<p>Twitter</p>
+		</div>
+		<div>
+			<p><b>Register a Club</b></p>
+			<p>Event Policies</p>
+			<p>Systems Planner</p>
+			<p>Payment Systems</p>
+			<p>Registration Issues</p>
+		</div>
+	</footer>
+	<script src="/javascripts/home.js"></script>
+</body>
+
+</html>

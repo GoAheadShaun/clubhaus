@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>RSVP event</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+</head>
+
+<body>
+	<header class="cover-photo">
+		<img class="header-image" src="images/AUSS_header.jpeg" alt="Header Image">
+		<div class="top-bar-transparent inline-content">
+
+			<div class="logo">
+				<img onclick="goHome()" src="images/clubhaus_logo.png" alt="Website Logo">
+			</div>
+			<div class="search">
+				<input type="text" class="search">
+			</div>
+			<div v-on:load="isLoggedInStatus" id="test">
+				<div class="sign">
+					<button class="red" onclick="visitLogin()" v-if="!isLoggedIn" id="loginBtn" type="button">Log In</button>
+					<button class="red" onclick="visitRegister()" v-if="!isLoggedIn" id="registerBtn"
+						type="button">Register</button>
+					<button class="red" onclick="visitMyAccount()" v-if="isLoggedIn" id="myAccountBtn" type="button">My
+						Account</button>
+					<button class="red" onclick="visitMyEvent()" v-if="isLoggedIn" id="myEventsBtn" type="button">My Events</button>
+                    <button class="red logout" onclick="logout()" v-if="isLoggedIn" id="logoutBtn" type="button">Log out</button>
+				</div>
+			</div>
+		</div>
+	</header>
+    <div><img class="mainImage" src="images/galaxy_ball.jpeg" alt="Event image"></div>
+    <div class="main-content">
+        <div class="left-column">
+            <div class="content">
+                <h3>Adelaide University Space Society</h3>
+                <h1 class="event-name">Galaxy Ball</h1>
+                <h3>About</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus lacinia ipsum sit amet
+                    laoreet.
+                    Fusce fringilla luctus libero ut ultricies. Duis ut est eu erat viverra bibendum ut eu risus. Donec
+                    ut
+                    tellus non neque rutrum sagittis. Donec sed orci ac sem tincidunt dictum in sit amet tellus. Nullam
+                    ante
+                    velit, gravida quis finibus non, faucibus sed lectus. Nunc a sem eget augue ullamcorper porttitor.
+                </p>
+                <p> Vivamus vel imperdiet est. Morbi ut sapien non dolor porttitor porta. Nullam et massa lacus.
+                    Interdum et
+                    malesuada fames ac ante ipsum primis in faucibus. Nam nec ligula nisi. Proin imperdiet accumsan urna
+                    eget sollicitudin. Donec elementum libero ac dignissim tincidunt. Suspendisse venenatis vehicula
+                    elit
+                    vel congue. Nam tincidunt laoreet libero, sit amet fringilla neque fringilla ultrices.
+                </p>
+                <p>
+                    Nullam ullamcorper volutpat nulla, id sodales erat mattis et. Suspendisse fringilla dapibus finibus.
+                    Morbi feugiat tortor vel lectus dictum imperdiet...
+                </p>
+                <div class="location-time">
+                    <div class="image-container">
+                        <img class="icon" src="images/calendar.png" alt="Calender">
+                        <div class="text-container">
+                            <p>30/07/2023</p>
+                            <p>6pm-12pm</p>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img class="icon" src="images/location.png" alt="Location">
+                        <div class="text-container">
+                            <p>Adelaide Convention Centre</p>
+                            <p>North Terrace,Adelaide,</p>
+                            <p>South Australia,5000</p>
+                            <p>Australia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <div class="right-column">
+                <div class="join-button">
+                    <button type="button" class="green">Join Club</button>
+                </div>
+                <div class="Register-box">
+                    <p><strong>Price:</strong>100$ Per ticket</p>
+                    <div><button type="button" class="green" >Register</button></div>
+                </div>
+            </div>
+    </div>
+
+	<footer>
+		<div>
+			<p><b>Services</b></p>
+			<p>About</p>
+			<p>Help Desk</p>
+			<p>Careers</p>
+			<p>Security</p>
+			<p>Privacy</p>
+			<p>Accessability</p>
+		</div>
+		<div>
+			<p><b>Connec Your Socials</b></p>
+			<p>Data Transfer</p>
+			<p>Contact Support</p>
+			<p>Instagram</p>
+			<p>Facebook</p>
+			<p>Twitter</p>
+		</div>
+		<div>
+			<p><b>Register a Club</b></p>
+			<p>Event Policies</p>
+			<p>Systems Planner</p>
+			<p>Payment Systems</p>
+			<p>Registration Issues</p>
+		</div>
+	</footer>
+
+    <script src="/javascripts/event_rsvp.js"></script>
+	<script src="/javascripts/home.js"></script>
+</body>
+
+
+</html>

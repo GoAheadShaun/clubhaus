@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Clubhaus</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+</head>
+
+<body>
+    <header>
+		<div class="top-bar-transparent inline-content">
+			<div class="logo">
+				<img onclick="goHome()" src="images/clubhaus_logo.png" alt="Website Logo">
+			</div>
+		</div>
+	</header>
+
+    <div>
+        <div class="rego-content">
+            <h2>Manager's Log In</h2>
+            <form class="form-container">
+                <label for="email">E-mail:</label><br>
+                <input type="email" placeholder="your@email.com" name="email" size="30" required><br>
+                <br>
+                <label for="password">Password:</label><br>
+                <input type="password" placeholder="********" name="password" required><br><br>
+                <br>
+                <button onclick="login(event)" class="login_rego_button red" type="submit">Log In</button>
+            </form>
+
+        </div>
+    </div>
+
+	<footer>
+		<div>
+			<p><b>Services</b></p>
+			<p>About</p>
+			<p>Help Desk</p>
+			<p>Careers</p>
+			<p>Security</p>
+			<p>Privacy</p>
+			<p>Accessability</p>
+		</div>
+		<div>
+			<p><b>Connec Your Socials</b></p>
+			<p>Data Transfer</p>
+			<p>Contact Support</p>
+			<p>Instagram</p>
+			<p>Facebook</p>
+			<p>Twitter</p>
+		</div>
+		<div>
+			<p><b>Register a Club</b></p>
+			<p>Event Policies</p>
+			<p>Systems Planner</p>
+			<p>Payment Systems</p>
+			<p>Registration Issues</p>
+		</div>
+	</footer>
+
+	<script src="/javascripts/manager.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Clubhaus</title>
+	<link rel="stylesheet" href="stylesheets/styles.css">
+	<script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+
+<body>
+	<header>
+		<div class="top-bar-transparent inline-content">
+
+			<div class="logo">
+				<img onclick="goHome()" src="images/clubhaus_logo.png" alt="Website Logo">
+			</div>
+		</div>
+	</header>
+
+	<div>
+		<div class="rego-content">
+			<h2>Create an Account</h2>
+			<form class="form-container">
+				<label for="e-mail">E-mail:</label><br>
+				<input type="email" placeholder="your@email.com" name="e-mail" size="30" required>
+				<span class="error-message" id="email-error"></span><br><br>
+
+				<label for="e-mail">Confirm E-mail:</label><br>
+				<input type="email" placeholder="your@email.com" name="confirm-email" size="30" required>
+				<span class="error-message" id="confirm-email-error"></span><br><br>
+
+				<label for="first_name">First Name:</label><br>
+				<input type="text" placeholder="Jane" name="first_name" size="30" required><br><br>
+				<label for="last_name">Last Name:</label><br>
+				<input type="text" placeholder="Doe" name="last_name" size="30" required><br><br>
+
+				<label for="password">Create Password:</label><br>
+				<input type="password" placeholder="********" name="password" required>
+				<span class="error-message" id="password-error"></span><br>
+
+				<p class="passwd_reqs">* Password must have at least one: capital letter, number and special character.
+				</p>
+
+				<label for="password">Confirm Password:</label><br>
+				<input type="password" placeholder="********" name="confirm-password" required>
+				<span class="error-message" id="confirm-password-error"></span><br>
+
+				<br>
+				<button class="login_rego_button red" type="button" onclick="signUp()">Create Account</button>
+				<br>
+				<button onclick="window.location.href = '/login.html';" class="login_rego_button red" type="submit">Log In</button>
+					<div id="g_id_onload"
+						data-client_id="605273485972-fpg2n0t2giee7knus91n0slknv2ja6f3.apps.googleusercontent.com"
+						data-context="signup"
+						data-ux_mode="popup"
+						data-callback="doGoogleSignUp"
+						data-auto_prompt="false">
+					</div>
+					<div class="g_id_signin"
+						data-type="standard"
+						data-shape="pill"
+						data-theme="outline"
+						data-text="signup_with"
+						data-size="large"
+						data-logo_alignment="left">
+					</div>
+			</form>
+		</div>
+	</div>
+
+	<footer>
+		<div>
+			<p><b>Services</b></p>
+			<p>About</p>
+			<p>Help Desk</p>
+			<p>Careers</p>
+			<p>Security</p>
+			<p>Privacy</p>
+			<p>Accessability</p>
+		</div>
+		<div>
+			<p><b>Connec Your Socials</b></p>
+			<p>Data Transfer</p>
+			<p>Contact Support</p>
+			<p>Instagram</p>
+			<p>Facebook</p>
+			<p>Twitter</p>
+		</div>
+		<div>
+			<p><b>Register a Club</b></p>
+			<p>Event Policies</p>
+			<p>Systems Planner</p>
+			<p>Payment Systems</p>
+			<p>Registration Issues</p>
+		</div>
+	</footer>
+
+	<script src="/javascripts/sign_up.js"></script>
+	<script src="/javascripts/home.js"></script>
+</body>
+
+</html>

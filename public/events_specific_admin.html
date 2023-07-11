@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Event Details</title>
+  <link rel="stylesheet" href="stylesheets/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+
+<body onload="loadEventDetails()">
+  <header>
+    <div v-on:load="isLoggedInStatus" id="test" class="top-bar-transparent inline-content">
+      <div class="logo">
+        <img onclick="goSysAdmin()" src="images/clubhaus_logo.png" alt="Website Logo">
+      </div>
+      <div class="sign">
+        <button class="red logout" onclick="logout()" v-if="isLoggedIn" id="logoutBtn" type="button">Log out</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-content">
+    <div class="content">
+      <h1 id="event-name">The Toliman Space Telescope</h1>
+      <div class="regist">
+        <button class="rsvp-button" type="button">View RSVP</button>
+        <div class="popup-container" id="popupContainer">
+          <h2>RSVP'D Members of the Event</h2>
+          <ul id="members">
+
+              <!-- Add more list items as needed -->
+          </ul>
+          <div class="centered-button">
+              <button type="button" onclick="closeEventMemberPopup()">Close</button>
+          </div>
+      </div>
+      </div>
+      <h3>About</h3>
+      <p id="description">Event description goes here</p>
+
+      <h3>Details</h3>
+      <p><strong>Date:</strong> <span id="date">26/05/2023</span></p>
+      <p><strong>Location:</strong> <span id="location">Ingkarni Wardli 5.57</span></p>
+    </div>
+    <div class="image-container">
+      <img id="event-image" class="club-photo" src="images/auss_dr_chris_betters.png" alt="Event Photo">
+    </div>
+  </div>
+
+
+  <header class="bottom-bar">
+    <div class="left-item">Item 1</div>
+    <div class="center-item">Item 2</div>
+    <div class="right-item">Item 3</div>
+  </header>
+  <script src="/javascripts/sys_admin.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{Website Name}</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+</head>
+
+<body>
+	<header>
+		<div class="top-bar-transparent inline-content">
+			<div class="logo">
+				<img onclick="goHome()" src="images/clubhaus_logo.png" alt="Website Logo">
+			</div>
+
+			<div class="search">
+				<input type="text" class="search">
+			</div>
+			<div v-on:load="isLoggedInStatus" id="test">
+				<div class="sign">
+					<button class="red" onclick="visitLogin()" v-if="!isLoggedIn" id="loginBtn" type="button">Log In</button>
+					<button class="red" onclick="visitRegister()" v-if="!isLoggedIn" id="registerBtn" type="button">Register</button>
+					<button class="red" onclick="visitMyAccount()" v-if="isLoggedIn" id="myAccountBtn" type="button">My Account</button>
+					<button class="red" onclick="visitMyEvent()" v-if="isLoggedIn" id="myEventsBtn" type="button">My Events</button>
+                    <button class="red logout" onclick="logout()" v-if="isLoggedIn" id="logoutBtn" type="button">Log out</button>
+				</div>
+			</div>
+		</div>
+	</header>
+
+    <div class="main-content">
+        <div class="content">
+            <h1>Club Events</h1>
+        </div>
+        <div class="club-event-upcoming-past-buttons">
+            <button class="red" type="button">Upcoming</button>
+            <button  class="red" type="button">Past</button>
+        </div>
+      <ul>
+
+      </ul>
+      <script>renderEvents()</script>
+    </div>
+
+
+	<footer>
+		<div>
+			<p><b>Services</b></p>
+			<p>About</p>
+			<p>Help Desk</p>
+			<p>Careers</p>
+			<p>Security</p>
+			<p>Privacy</p>
+			<p>Accessability</p>
+		</div>
+		<div>
+			<p><b>Connec Your Socials</b></p>
+			<p>Data Transfer</p>
+			<p>Contact Support</p>
+			<p>Instagram</p>
+			<p>Facebook</p>
+			<p>Twitter</p>
+		</div>
+		<div>
+			<p><b>Register a Club</b></p>
+			<p>Event Policies</p>
+			<p>Systems Planner</p>
+			<p>Payment Systems</p>
+			<p>Registration Issues</p>
+		</div>
+	</footer>
+
+    <script src="/javascripts/club_events.js"></script>
+	<script src="/javascripts/home.js"></script>
+</body>
+
+</html>

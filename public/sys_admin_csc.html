@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSC</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+
+<body onload="renderUpAdminEvents(2);managerinfo(2);">
+	<header class="cover-photo csc-header">
+
+		<div class="top-bar-transparent inline-content">
+			<div class="logo">
+				<img onclick="goSysAdmin()" src="images/clubhaus_logo.png" alt="Website Logo">
+			</div>
+
+			<div class="search">
+				<input type="text" class="search">
+			</div>
+			<div v-on:load="isLoggedInStatus" id="test">
+				<div class="sign">
+                    <button class="red logout" onclick="logout()" v-if="isAdminLoggedIn" id="logoutBtn" type="button">Log out</button>
+				</div>
+			</div>
+		</div>
+	</header>
+
+    <div class="main-content">
+		<div class="inline-content">
+			<h1>Computer Science Club</h1>
+			<button onclick="visitChangeClubManager2(2)" style="width: 300px;" class="green" type="button">Change Club Manager</button>
+		</div>
+		<div>
+				<h3>Club Manager</h3>
+				<p id="managerName">Random Person</p>
+		</div>
+			<h3>Upcoming Events</h3>
+			<div class="events">
+
+			</div>
+    </div>
+
+	<footer>
+		<div>
+			<p><b>Services</b></p>
+			<p>About</p>
+			<p>Help Desk</p>
+			<p>Careers</p>
+			<p>Security</p>
+			<p>Privacy</p>
+			<p>Accessability</p>
+		</div>
+		<div>
+			<p><b>Connec Your Socials</b></p>
+			<p>Data Transfer</p>
+			<p>Contact Support</p>
+			<p>Instagram</p>
+			<p>Facebook</p>
+			<p>Twitter</p>
+		</div>
+		<div>
+			<p><b>Register a Club</b></p>
+			<p>Event Policies</p>
+			<p>Systems Planner</p>
+			<p>Payment Systems</p>
+			<p>Registration Issues</p>
+		</div>
+	</footer>
+    <script src="/javascripts/sys_admin.js"></script>
+</body>
+
+</html>
